@@ -1,0 +1,203 @@
+/* Para plantillas SiteOrigin */
+body.siteorigin-panels{
+    .panel-layout{
+        .panel-grid{
+            margin: 0 !important;
+            .so-panel{
+                .textwidget{
+                    line-height: 28px;
+                    p{ margin: 0 0 @margin-md; }
+                    ul{
+                        margin: @margin-md 0;
+                        padding: 0 0 0 @padding-md;
+                        list-style-type: square;
+                        li{
+                            margin: 0 0 @margin-sm;
+                            position: relative;
+                        }
+                    }
+                    ul.big{
+                        li:before{
+                            font-size: 24px;
+                            line-height: 24px;
+                        }
+                    }
+                    ul.checked,ul.query{
+                        list-style-type: none;
+                        //li{ padding-left: @padding-md; }
+                        li:before{
+                            position: absolute;
+                            left: -@margin-md; 
+                            content: '';
+                            font-family: @font-awesome;
+                            margin: 0 @margin-sm 0 0 ;
+                            color: @color-shade;
+                        }
+                    }
+                    ul.checked > li:before{ content: '\f00c'; }
+                    ul.query > li:before{ content: '\f29c'; }
+                }
+            }
+            
+            /*Estilos y personalizaciones de los contenedores row/cell */
+            
+            .panel-row-style{ box-sizing: border-box; }
+            
+            .panel-row-style.background-white{ background-color: @color-white; }
+            .panel-row-style.background-clear{ background-color: @color-clear; }
+            .panel-row-style.background-shade{ background-color: @color-shade; }
+            .panel-row-style.background-gray{ background-color: @color-gray; }
+            .panel-row-style.background-dark{ background-color: @color-dark; }
+            .panel-row-style.background-black{ background-color: @color-black; }
+            .panel-row-style.background-theme{ background-color: @color-theme; }
+            .panel-row-style.background-theme-alt{ background-color: @color-theme-alt; }
+            
+            .panel-row-style.full-width{
+                width: 100%;
+                
+                /*Celdas*/
+                .panel-grid-cell{
+                    .so-panel.widget{
+                        .widget-title{ margin: 0; }
+                    }
+                    .panel-cell-style.boxed{
+                        width: @content-width;
+                        max-width: @content-max-width;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            .panel-row-style:not(.full-width){
+                width: @content-width;
+                max-width: @content-max-width;
+                margin: 0 auto;
+            }
+            .panel-row-style.full-view-height{ height: 100vh; }
+            .panel-row-style.theme,.panel-row-style.orange{
+                color: @color-white;
+                h1,h2,h3,h4,h5,h6{ color: @color-white; }
+            }
+            .panel-row-style.theme{ background-color: @color-theme; }
+            .panel-row-style.orange{ background-color: @color-theme-alt; }
+
+            //padding
+            .panel-row-style.pad-tn{ padding: @padding-tn 0; }
+            .panel-row-style.pad-sm{ padding: @padding-sm 0; }
+            .panel-row-style.pad-md{ padding: @padding-md 0; }
+            .panel-row-style.pad-lg{ padding: @padding-lg 0; }
+            .panel-row-style.pad-xl{ padding: @padding-xl 0; }
+            .panel-row-style.pad-top-tn{ padding-top: @padding-tn; }
+            .panel-row-style.pad-top-sm{ padding-top: @padding-sm; }
+            .panel-row-style.pad-top-md{ padding-top: @padding-md; }
+            .panel-row-style.pad-top-lg{ padding-top: @padding-lg; }
+            .panel-row-style.pad-top-xl{ padding-top: @padding-xl; }
+            .panel-row-style.pad-bot-tn{ padding-bottom: @padding-tn; }
+            .panel-row-style.pad-bot-sm{ padding-bottom: @padding-sm; }
+            .panel-row-style.pad-bot-md{ padding-bottom: @padding-md; }
+            .panel-row-style.pad-bot-lg{ padding-bottom: @padding-lg; }
+            .panel-row-style.pad-bot-xl{ padding-bottom: @padding-xl; }
+            
+            //margin
+            .panel-row-style.spa-tn{ margin: @margin-tn 0; }
+            .panel-row-style.spa-sm{ margin: @margin-sm 0; }
+            .panel-row-style.spa-md{ margin: @margin-md 0; }
+            .panel-row-style.spa-lg{ margin: @margin-lg 0; }
+            .panel-row-style.spa-xl{ margin: @margin-xl 0; }
+            .panel-row-style.spa-top-tn{ margin-top: @margin-tn; }
+            .panel-row-style.spa-top-sm{ margin-top: @margin-sm; }
+            .panel-row-style.spa-top-md{ margin-top: @margin-md; }
+            .panel-row-style.spa-top-lg{ margin-top: @margin-lg; }
+            .panel-row-style.spa-top-xl{ margin-top: @margin-xl; }
+            .panel-row-style.spa-bot-tn{ margin-bottom: @margin-tn; }
+            .panel-row-style.spa-bot-sm{ margin-bottom: @margin-sm; }
+            .panel-row-style.spa-bot-md{ margin-bottom: @margin-md; }
+            .panel-row-style.spa-bot-lg{ margin-bottom: @margin-lg; }
+            .panel-row-style.spa-bot-xl{ margin-bottom: @margin-xl; }
+
+            //clases de widgets
+            .panel-widget-style.centered{ text-align: center; }
+            .panel-widget-style.justified{ text-align: justify; }
+            
+            .panel-widget-style.white{
+                color: @color-white;
+                strong,a,h1,h2,h3,h4,h5,h6{ color: @color-white; }
+            }
+            .panel-widget-style.clear{
+                color: @color-clear;
+                strong,a,h1,h2,h3,h4,h5,h6{ color: @color-clear; }
+            }
+            .panel-widget-style.shade{ color: @color-shade; }
+            .panel-widget-style.gray{ color: @color-gray; }
+            .panel-widget-style.dark{ color: @color-dark; }
+            .panel-widget-style.black{ color: @color-black; }
+            .panel-widget-style.theme{ color: @color-theme; }
+            .panel-widget-style.theme-alt{ color: @color-theme-alt; }
+            
+            .panel-widget-style.pad-tn{ padding: @padding-tn 0; }
+            .panel-widget-style.pad-sm{ padding: @padding-sm 0; }
+            .panel-widget-style.pad-md{ padding: @padding-md 0; }
+            .panel-widget-style.pad-lg{ padding: @padding-lg 0; }
+            .panel-widget-style.pad-xl{ padding: @padding-xl 0; }
+            .panel-widget-style.pad-top-tn{ padding-top: @padding-tn; }
+            .panel-widget-style.pad-top-sm{ padding-top: @padding-sm; }
+            .panel-widget-style.pad-top-md{ padding-top: @padding-md; }
+            .panel-widget-style.pad-top-lg{ padding-top: @padding-lg; }
+            .panel-widget-style.pad-top-xl{ padding-top: @padding-xl; }
+            .panel-widget-style.pad-bot-tn{ padding-bottom: @padding-tn; }
+            .panel-widget-style.pad-bot-sm{ padding-bottom: @padding-sm; }
+            .panel-widget-style.pad-bot-md{ padding-bottom: @padding-md; }
+            .panel-widget-style.pad-bot-lg{ padding-bottom: @padding-lg; }
+            .panel-widget-style.pad-bot-xl{ padding-bottom: @padding-xl; }
+            
+            //margin
+            .panel-widget-style.spa-tn{ margin: @margin-tn 0; }
+            .panel-widget-style.spa-sm{ margin: @margin-sm 0; }
+            .panel-widget-style.spa-md{ margin: @margin-md 0; }
+            .panel-widget-style.spa-lg{ margin: @margin-lg 0; }
+            .panel-widget-style.spa-xl{ margin: @margin-xl 0; }
+            .panel-widget-style.spa-top-tn{ margin-top: @margin-tn; }
+            .panel-widget-style.spa-top-sm{ margin-top: @margin-sm; }
+            .panel-widget-style.spa-top-md{ margin-top: @margin-md; }
+            .panel-widget-style.spa-top-lg{ margin-top: @margin-lg; }
+            .panel-widget-style.spa-top-xl{ margin-top: @margin-xl; }
+            .panel-widget-style.spa-bot-tn{ margin-bottom: @margin-tn; }
+            .panel-widget-style.spa-bot-sm{ margin-bottom: @margin-sm; }
+            .panel-widget-style.spa-bot-md{ margin-bottom: @margin-md; }
+            .panel-widget-style.spa-bot-lg{ margin-bottom: @margin-lg; }
+            .panel-widget-style.spa-bot-xl{ margin-bottom: @margin-xl; }
+            @media only screen and (min-width: 781px){
+                //espaciado lateral
+                .panel-widget-style.pad-lft-tn{ padding-left: @padding-tn; }
+                .panel-widget-style.pad-lft-sm{ padding-left: @padding-sm; }
+                .panel-widget-style.pad-lft-md{ padding-left: @padding-md; }
+                .panel-widget-style.pad-lft-lg{ padding-left: @padding-lg; }
+                .panel-widget-style.pad-lft-xl{ padding-left: @padding-xl; }
+                .panel-widget-style.pad-rgt-tn{ padding-right: @padding-tn; }
+                .panel-widget-style.pad-rgt-sm{ padding-right: @padding-sm; }
+                .panel-widget-style.pad-rgt-md{ padding-right: @padding-md; }
+                .panel-widget-style.pad-rgt-lg{ padding-right: @padding-lg; }
+                .panel-widget-style.pad-rgt-xl{ padding-right: @padding-xl; }
+                //margen lateral
+                .panel-widget-style.spa-lft-tn{ margin-left: @margin-tn; }
+                .panel-widget-style.spa-lft-sm{ margin-left: @margin-sm; }
+                .panel-widget-style.spa-lft-md{ margin-left: @margin-md; }
+                .panel-widget-style.spa-lft-lg{ margin-left: @margin-lg; }
+                .panel-widget-style.spa-lft-xl{ margin-left: @margin-xl; }
+                .panel-widget-style.spa-rgt-tn{ margin-right: @margin-tn; }
+                .panel-widget-style.spa-rgt-sm{ margin-right: @margin-sm; }
+                .panel-widget-style.spa-rgt-md{ margin-right: @margin-md; }
+                .panel-widget-style.spa-rgt-lg{ margin-right: @margin-lg; }
+                .panel-widget-style.spa-rgt-xl{ margin-right: @margin-xl; }
+            }
+            
+            
+            .panel-widget-style.text-right .textwidget{ text-align: right; }
+            .panel-widget-style.text-justify .textwidget{ text-align: justify; }
+            .panel-widget-style.text-left .textwidget{ text-align: left; }
+            .panel-widget-style.text-center .textwidget{ text-align: center; }
+        }
+    }
+}
+
+
+

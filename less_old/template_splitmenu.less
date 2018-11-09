@@ -1,0 +1,22 @@
+/* SPLIT MENU */
+@media only screen and ( min-width: 768px){ #split-menu-container{ display: none; } }
+@media only screen and ( max-width: 767px ) {
+    #site-main{
+    }
+    #split-menu-container{
+    }
+    #split-menu-container + #site-main{
+        //menú oculto (pantalla completa)
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    #split-menu-container.active + #site-main{
+        //menu activo (pantalla partida)
+        transform: translate3d(75%, 0, 0);
+        -webkit-transform: translate3d(75%, 0, 0);
+        //probar en todos los navegadores
+        position: fixed;
+    }
+}
+
+

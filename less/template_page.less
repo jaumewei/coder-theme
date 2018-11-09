@@ -1,0 +1,57 @@
+/* plantillas de página */
+body.page{
+    #site-main{
+        #site-content{
+            .page-header{
+            }
+            .page-header > .container{
+                padding: @padding-md 0;
+                .page-title{
+                    width: @content-width;
+                    max-width: @content-max-width;
+                    margin: 0 auto;
+                    //padding: @padding-md 0 @padding-sm;
+                    @media only screen and (min-width: 1200px){
+                        font-size: 64px;
+                    }
+                    @media only screen and (min-width: 960px) and (max-width: 1199px){
+                        font-size: 48px;
+                    }
+                    @media only screen and (min-width: 781px) and (max-width: 959px){
+                        font-size: 36px;
+                    }
+                    @media only screen and (min-width: 480px) and (max-width: 780px){
+                        font-size: 32px;
+                    }
+                    @media only screen and (max-width: 479px){
+                        font-size: 28px;
+                    }
+                }
+            }
+        }
+    }
+}
+//paginas de condiciones y texto general
+body.page:not(.siteorigin-panels):not(.home){
+    #site-main{ background-color: @color-white; }
+    #site-header{
+        position: initial !important;
+        background-color: @color-black !important;
+    }
+    #site-content >  .content{
+        width: @content-width;
+        max-width: @content-max-width;
+        margin: @margin-md auto @margin-lg;
+        font-weight: 300;
+        line-height: 38px;
+        letter-spacing: 3px;
+        text-align: justify;
+        p{ margin: 0 0 @margin-md; }
+        h1,h2,h3,h4,h5,h6{ margin: @margin-md 0; }
+        ul{
+            list-style-type: initial;
+            margin: initial;
+            padding: initial;
+        }
+    }
+}

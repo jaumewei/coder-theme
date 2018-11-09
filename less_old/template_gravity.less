@@ -1,0 +1,136 @@
+/*estilo generico form gravity*/
+.gform_wrapper{
+    margin: 0 !important;
+    max-width: initial !important;
+    ul.gform_fields{
+        li.gfield {
+            padding-bottom: 0 !important;
+            margin-bottom: 10px !important;
+            .ginput_container { margin-top: 0; }
+            input[type="text"],input[type="email"],input[type="tel"],
+            input[type="password"],input[type="number"],textarea{
+                padding: 10px;
+                box-sizing: border-box;
+                border-radius: 0;
+                border: none;
+                width: 100%;
+                border-bottom: 1px solid @color-gray;
+                background: none;
+                transition: @transition !important;
+                /*background-color: @color-white;*/
+            }
+            /*textarea{ height: 48px; }*/
+            input[type="text"]:focus,input[type="email"]:focus,input[type="password"]:focus,
+            input[type="tel"]:focus,input[type="number"]:focus,textarea:focus{
+                background-color: @color-shade !important;
+                color: @color-dark;
+            }
+            .gfield_description{
+                font-size: 12px;
+                color: @color-gray;
+            }
+            ul.gfield_checkbox{
+                margin: 0;
+                li{
+                    margin: 0 !important;
+                    input[type="checkbox"]{ display: none; }
+                    input[type="checkbox"] + label{
+                        font-size: 18px !important;
+                        letter-spacing: 1px !important;
+                        cursor: pointer;
+                        a{
+                            color: @color-theme !important;
+                            text-decoration: underline !important;
+                        }
+                        a:hover,a:active,a:focus{
+                            color: @color-theme-alt !important
+                        }
+                    }
+                    input[type="checkbox"] + label:before{
+                        content: '\f096';
+                        display: inline-block;
+                        width: 24px;
+                        font-weight: 100 !important;
+                        font-size: 24px !important;
+                        font-family: @font-awesome;
+                        margin-right: 4px;
+                        color: @color-shade;
+                        transition: @transition;
+                    }
+                    input[type="checkbox"]:checked + label:before{
+                        content: '\f046';
+                        color: @color-dark;
+                    }
+                }
+            }
+        }
+    }
+    /*li.gfield:not(:last-child){
+        input[type="text"],input[type="email"],input[type="tel"],
+            input[type="password"],input[type="number"],textarea{
+                border-bottom: 1px solid @color-gray;
+        }
+    }*/
+    .gform_page_footer{
+        padding: 20px 0 0 !important;
+        input[type="button"]{
+            padding: 12px 20px !important;
+            text-transform: uppercase !important;
+            text-align: center !important;
+            border: none;
+            transition: @transition !important;
+            //background-color: @color-clear !important;
+            float: right;
+            cursor: pointer;
+
+            border-bottom: 2px solid @color-dark;
+            color: @color-dark !important;
+            font-weight: 400 !important;
+        }
+        input[type="button"]:hover{
+            background-color: @color-dark !important;
+            color: @color-clear !important;
+        }
+    }
+    .gform_page_footer:after{
+        content: '';
+        display: block;
+        height: 0;
+        clear: both;
+    }
+    .gform_footer{
+        /*todas las propiedades en important por culpa del puto divi de mierda*/
+        input[type="submit"]{
+            padding: 12px 20px !important;
+            text-transform: uppercase !important;
+            text-align: center !important;
+            border: none;
+            //min-width: 120px !important;
+            transition: @transition !important;
+            background-color: @color-clear !important;
+            float: right !important;
+            cursor: pointer;
+
+            border-bottom: 2px solid @color-dark;
+            color: @color-dark !important;
+            font-weight: 400 !important;
+        }
+        input[type="submit"]:hover{
+            background-color: @color-dark !important;
+            color: @color-clear !important;
+        }
+    }
+    .gform_footer:after{
+        content: '';
+        display: block;
+        height: 0;
+        clear: both;
+    }
+}
+.gform_wrapper.no_label_wrapper{
+    ul.gform_fields{
+        li.gfield {
+            .gfield_label{ display: none; }
+        }
+    }
+}

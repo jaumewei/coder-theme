@@ -1,0 +1,190 @@
+/* Estilos y clases genéricas */
+body,html{
+    margin: 0;
+    padding: 0;
+    font-family: @font-roboto;
+    //font-size: 16px;
+    background-color: @color-clear;
+}
+*:focus{ outline: none; }
+h1,h2,h3,h4,h5,h6{
+    color: @color-dark;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: @font-roboto;
+}
+hr{
+    border: none;
+    border-top: 1px solid @color-shade;
+    margin: 10px 0 20px;
+}
+ul,ol{
+    margin: 0;
+    padding: 0;
+}
+a{
+    transition: @transition;
+    text-decoration: none;
+    color: @color-dark;
+}
+a:hover,a:active{
+    color: @color-theme-alt;
+    text-decoration: none;
+}
+.button,button{
+    padding: @padding-tn @padding-lg;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid @color-dark;
+
+    float: right;
+    cursor: pointer;
+    transition: @transition;
+
+    color: @color-dark;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+button:hover,button:active,button:focus,
+.button:hover,.button:active,.button:focus{
+    color: @color-clear;
+    background-color: @color-dark;
+}
+.button.primary,button.primary{
+    background-color: @color-dark;
+    color: @color-white;
+}
+button.primary:hover,button.primary:active,
+button.primary:focus,.button.primary:hover,
+.button.primary:active,.button.primary:focus{
+    background-color: @color-theme;
+}
+.button.full-width,button.full-width{
+    width: 100%;
+    max-width: initial;
+}
+.button.inline,button.inline{ display: inline-block; }
+.button.centered,button.centered{ margin: 0 auto; }
+
+input[type="text"],input[type="email"],input[type="tel"],
+input[type="password"],input[type="number"],input[type="search"],textarea{
+    padding: @padding-tn @padding-sm;
+    box-sizing: border-box;
+    border-radius: 0;
+    border: none;
+    width: 100%;
+    border: 1px solid @color-shade;
+    background-color: @color-clear;
+    transition: @transition;
+    color: @color-gray;
+    font-family: @font-roboto;
+    letter-spacing: 1px;
+}
+textarea{
+    min-height: @size-sm;
+}
+input[type="text"]:focus,input[type="email"]:focus,input[type="password"]:focus,
+input[type="tel"]:focus,input[type="number"]:focus,input[type="search"]:focus,textarea:focus{
+    background-color: @color-white;
+    border-color: @color-gray;
+    color: @color-dark;
+}
+
+.icon-telephone:before,.icon-email:before,
+.icon-account:before,.icon-cart:before,
+.icon-address:before{
+    content: '';
+    font-family: @font-awesome;
+    color: @color-gray;
+    display: inline-block;
+    margin-right: 6px;
+}
+.icon-email:before{ content: '\f003'; }
+.icon-telephone:before{ content: '\f098 '; }
+.icon-cart:before{ content: '\f07a'; }
+.icon-account:before{ content: '\f007 '; }
+.icon-address:before{ content: '\f041'; }
+.widget ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.widget iframe{
+    width: 100%;
+    min-height: 300px;
+}
+::-webkit-input-placeholder {
+   color: @color-gray;
+   font-weight: 300;
+   font-style: italic;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: @color-gray;
+   font-weight: 300;
+   font-style: italic;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: @color-gray;
+   font-weight: 300;
+   font-style: italic;
+}
+:-ms-input-placeholder {  
+   color: @color-gray;
+   font-weight: 300;
+   font-style: italic;
+}
+.clearfix{ clear: both; }
+
+.text-center{ text-align: center; }
+.text-justify{ text-align: justify; }
+.text-left{ text-align: left; }
+.text-right{ text-align: right; }
+
+//padding
+.container.pad-tn{ padding: @padding-tn 0; }
+.container.pad-sm{ padding: @padding-sm 0; }
+.container.pad-md{ padding: @padding-md 0; }
+.container.pad-lg{ padding: @padding-lg 0; }
+.container.pad-xl{ padding: @padding-xl 0; }
+.container.pad-top-tn{ padding-top: @padding-tn; }
+.container.pad-top-sm{ padding-top: @padding-sm; }
+.container.pad-top-md{ padding-top: @padding-md; }
+.container.pad-top-lg{ padding-top: @padding-lg; }
+.container.pad-top-xl{ padding-top: @padding-xl; }
+.container.pad-bot-tn{ padding-bottom: @padding-tn; }
+.container.pad-bot-sm{ padding-bottom: @padding-sm; }
+.container.pad-bot-md{ padding-bottom: @padding-md; }
+.container.pad-bot-lg{ padding-bottom: @padding-lg; }
+.container.pad-bot-xl{ padding-bottom: @padding-xl; }
+
+//margin
+.container.spa-tn{ margin: @margin-tn 0; }
+.container.spa-sm{ margin: @margin-sm 0; }
+.container.spa-md{ margin: @margin-md 0; }
+.container.spa-lg{ margin: @margin-lg 0; }
+.container.spa-xl{ margin: @margin-xl 0; }
+.container.spa-top-tn{ margin-top: @margin-tn; }
+.container.spa-top-sm{ margin-top: @margin-sm; }
+.container.spa-top-md{ margin-top: @margin-md; }
+.container.spa-top-lg{ margin-top: @margin-lg; }
+.container.spa-top-xl{ margin-top: @margin-xl; }
+.container.spa-bot-tn{ margin-bottom: @margin-tn; }
+.container.spa-bot-sm{ margin-bottom: @margin-sm; }
+.container.spa-bot-md{ margin-bottom: @margin-md; }
+.container.spa-bot-lg{ margin-bottom: @margin-lg; }
+.container.spa-bot-xl{ margin-bottom: @margin-xl; }
+
+
+.container.border-top{ border-top: 1px solid @color-shade; }
+.container.border-bottom{ border-bottom: 1px solid @color-shade; }
+.container.white{ background-color: @color-white; }
+.container.clear{ background-color: @color-clear; }
+.container.shaded{ background-color: @color-shade; }
+.container.gray{ background-color: @color-gray; color: @color-white; }
+.container.dark{ background-color: @color-dark; color: @color-white; }
+.container.black{ background-color: @color-black; color: @color-white; }
+
+
+
+

@@ -1,0 +1,17 @@
+Place here and extend the default/custom wordpress content type layouts.
+post-loop.php
+post-single.php
+page-single.php
+
+Customs:
+project-single.php
+project-loop.php
+task-loop.php
+...
+
+
+Define here also the theme parts you need to customize with html/php
+header.php
+footer.php
+top-bar.php
+...

@@ -1,0 +1,33 @@
+/* Sopotte para Woocommerce */
+body.woocommerce-cart,body.woocommerce-checkout,body.woocommerce-account{
+    .page-content.container{
+        margin: 0 auto @margin-lg;
+        width: @content-width;
+        max-width: @content-max-width;
+    }
+}
+body.woocommerce-account{
+    .woocommerce-MyAccount-content,.woocommerce-MyAccount-navigation{
+        
+    }
+    .woocommerce-MyAccount-navigation{
+        ul{
+            list-style-type: none;
+            li{
+                margin: 0 0 @margin-sm;
+                a{
+                    display: block;
+                    padding: @padding-tn @padding-sm;
+                    border: 1px solid @color-shade;
+                    
+                    color: @color-gray;
+                    text-align: center;
+                }
+                a:hover,a:active,a:focus{
+                    border-color: @color-black;
+                    color: @color-black;
+                }
+            }
+        }
+    }
+}
