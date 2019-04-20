@@ -17,39 +17,37 @@ final class CodersTheme extends \CODERS\Theme{
         return parent::defineThemeComponents()
                 ->set('wrapper_class', 'wrap clearfix')
                 ->registerLogo()
-                ->registerSidebar('blog',
-                        __('Blog','poly_theme_manager'),
-                        __('Area de widgets del Blog','poly_theme_manager'))
-                ->registerSidebar('top-bar',
-                        __('Barra Superior','poly_theme_manager'),
-                        __('Area de widgets de la barra superior de la cabecera','poly_theme_manager'))
-                ->registerSidebar('header',
-                        __('Cabecera','poly_theme_manager'),
-                        __('Area de widgets visible en la cabecera principal','poly_theme_manager'))
-                ->registerSidebar('footer-a',
-                        __('Footer A','poly_theme_manager'),
-                        __('Primera columna de widgets del pi&eacute; de p&aacute;gina','poly_theme_manager'))
-                ->registerSidebar('footer-b',
-                        __('Footer B','poly_theme_manager'),
-                        __('Primera columna de widgets del pi&eacute; de p&aacute;gina','poly_theme_manager'))
-                ->registerSidebar('footer-c',
-                        __('Footer C','poly_theme_manager'),
-                        __('Primera columna de widgets del pi&eacute; de p&aacute;gina','poly_theme_manager'))
-                ->registerSidebar('footer-d',
-                        __('Footer D','poly_theme_manager'),
-                        __('Primera columna de widgets del pi&eacute; de p&aacute;gina','poly_theme_manager'))
-                ->registerSidebar('bottom-bar',
-                        __('Barra Inferior','poly_theme_manager'),
-                        __('Area de widgets de la barra inferior al pi&eacute; de p&aacute;gina','poly_theme_manager'))
-                ->registerSidebar('error-bar',
-                        __('Error 404','poly_theme_manager'),
-                        __('Area de widgets a mostrar cuando no se encuentra el contenido solicitado','poly_theme_manager'))
+                ->registerSidebar('blog',__('Blog','poly_theme_manager'))
+                ->registerSidebar('top-bar',__('Barra Superior','poly_theme_manager'))
+                ->registerSidebar('header',__('Cabecera','poly_theme_manager'))
+                ->registerSidebar('footer-a',__('Footer A','poly_theme_manager'))
+                ->registerSidebar('footer-b',__('Footer B','poly_theme_manager'))
+                ->registerSidebar('footer-c',__('Footer C','poly_theme_manager'))
+                ->registerSidebar('footer-d',__('Footer D','poly_theme_manager'))
+                ->registerSidebar('bottom-bar',__('Barra Inferior','poly_theme_manager'))
+                ->registerSidebar('error-bar',__('Error 404','poly_theme_manager'))
                 //define los menús
                 ->registerMenu('main', __('Principal','poly_theme_manager'))
-                ->registerMenu('secondary', __('Secundario','poly_theme_manager'))
+                ->registerMenu('top', __('Secundario','poly_theme_manager'))
                 ->registerMenu('legal', __('Legal','poly_theme_manager'))
                 ->registerMenu('social', __('Social','poly_theme_manager'))
-                ->registerGoogleFont('Play',array(400,700));
+                ->registerGoogleFont('Play',array(400,700))
+                //soporte para VUEJS
+                ->registerScript('vue-core-support', 'https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js');
+    }
+    /**
+     * @return array Definición del Layout del tema
+     */
+    protected final function defineThemeLayout() {
+        return [
+            'site-header' => [
+                'top-bar' => ['top-bar-sidebar','top-menu'],
+                'header-main' => ['site-logo','header-sidebar','main-menu' ] ], //Header Block
+            'site-content' => [ self::THEME_CONTENT ],
+            'site-footer' => [
+                'footer-widgets' => ['footer-a-sidebar','footer-b-sidebar','footer-c-sidebar','footer-d-sidebar'],
+                'footer-bar' => ['legal-menu', 'bottom-bar-sidebar']
+            ] ];
     }
     /**
      * Soporte para woocommmerce
@@ -113,44 +111,24 @@ final class CodersTheme extends \CODERS\Theme{
         return array('site-main','site-header','site-content','site-footer');
     }
     /**
-     * @return array Definición del Layout del tema
+     * @return \CODERS\Theme
      */
-    protected final function defineThemeLayout() {
-        return array(
-            'site-header' => array(
-                'top-bar' => array(
-                    'top-bar-sidebar',
-                    'secondary-menu'),
-                'header-main' => array(
-                    'site-logo',
-                    'header-sidebar',
-                    'main-menu',
-                ) ),
-            'site-content' => array( 'content' ),
-            'site-footer' => array(
-                'footer-widgets' => array(
-                    'footer-a-sidebar',
-                    'footer-b-sidebar',
-                    'footer-c-sidebar',
-                    'footer-d-sidebar',
-                ),
-                'footer-bar' => array(
-                    'legal-menu',
-                    'bottom-bar-sidebar'
-                )
-            ));
-    }
-    /**
-     * Muestra la ficha de producto woocommrece
-     * @param int $product_id
-     */
-    public static final function product( $product_id = 0 ){
+    protected final function registerThemeSetup() {
         
-        if( $product_id === 0 ){
-            $product_id = get_the_ID();
+        if( !function_exists('coders_woocommerce_page')){
+            
+            function coders_woocommerce_page( $product_id = 0 ){
+
+                if( $product_id === 0 ){
+                    $product_id = get_the_ID();
+                }
+
+                print class_exists('WC_Shortcodes') ?  WC_Shortcodes::product_page( array('id'=> $product_id ) ) : '';
+            }
         }
         
-        print class_exists('WC_Shortcodes') ?  WC_Shortcodes::product_page( array('id'=> $product_id ) ) : '';
+        
+        return parent::registerThemeSetup();
     }
 }
 

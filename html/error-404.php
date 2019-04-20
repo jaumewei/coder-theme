@@ -5,7 +5,7 @@
 </div>
 <div class="error-content container border-top border-bottom white text-center pad-md">
     <div class="wrap">
-        <?php poly_thememan_sidebar('error-bar') ?>
+        <?php coders_thememan_sidebar('error-bar') ?>
     </div>
 </div>
 <div class="error-content container pad-md">

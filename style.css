@@ -8,3 +8,26 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: coders_theme
  */
+
+
+/* esto es para gaby paoli*/
+.wc-stripe-checkout-button, .wc-stripe-checkout-button:active{
+    padding: 10px 20px;
+    min-width: 180px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 17px;
+    letter-spacing: 1px;
+    background-color: #78bec8;
+    border: 2px solid #78bec8;
+    color: #fff;
+    cursor: pointer;
+    transition: ease-out 250ms;
+}
+
+.wc-stripe-checkout-button:hover,.wc-stripe-checkout-button:active,.wc-stripe-checkout-button:focus{
+    background-color: #fff;
+    color: #78bec8;
+}
+
+

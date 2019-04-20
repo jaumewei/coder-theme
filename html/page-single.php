@@ -10,13 +10,13 @@
     <?php endif; ?>
     <!-- contenido -->
     <div class="page-content container">
-        <?php if(poly_thememan_hasclass('siteorigin-panels')): ?>
+        <?php if(coders_thememan_hasclass('siteorigin-panels')): ?>
         <div classs="wrap clearfix"><!-- inicio wrap contenido -->
         <?php endif; ?>
 
         <?php the_content() ?>
 
-        <?php if(poly_thememan_hasclass('siteorigin-panels')): ?>
+        <?php if(coders_thememan_hasclass('siteorigin-panels')): ?>
         <!-- fin wrap contenido --></div>
         <?php endif; ?>
     </div>
