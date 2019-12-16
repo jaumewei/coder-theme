@@ -2,7 +2,7 @@
 body,html{
     margin: 0;
     padding: 0;
-    font-family: @font-roboto;
+    font-family: @font-play;
     //font-size: 16px;
     background-color: @color-clear;
 }
@@ -11,7 +11,7 @@ h1,h2,h3,h4,h5,h6{
     color: @color-dark;
     text-transform: uppercase;
     font-weight: 500;
-    font-family: @font-roboto;
+    font-family: @font-play;
 }
 hr{
     border: none;
@@ -78,7 +78,7 @@ input[type="password"],input[type="number"],input[type="search"],textarea{
     background-color: @color-clear;
     transition: @transition;
     color: @color-gray;
-    font-family: @font-roboto;
+    font-family: @font-play;
     letter-spacing: 1px;
 }
 textarea{
@@ -90,21 +90,47 @@ input[type="tel"]:focus,input[type="number"]:focus,input[type="search"]:focus,te
     border-color: @color-gray;
     color: @color-dark;
 }
-
-.icon-telephone:before,.icon-email:before,
-.icon-account:before,.icon-cart:before,
-.icon-address:before{
+//ocultar textos en botones con icono
+span.icon.no-text,a.icon.no-text,li.icon.no-text > a{ font-size: 0; color: transparent; }
+//resaltar icono en botones sin texto
+span.icon.no-text:before,a.icon.no-text:before,li.icon.no-text > a:before{
+    color: @color-shade;
+    font-size: 15px;
+    display: block;
+}
+//icono
+.button.icon:before,span.icon:before,a.icon:before, li.icon > a:before{
     content: '';
     font-family: @font-awesome;
     color: @color-gray;
     display: inline-block;
     margin-right: 6px;
 }
-.icon-email:before{ content: '\f003'; }
-.icon-telephone:before{ content: '\f098 '; }
-.icon-cart:before{ content: '\f07a'; }
-.icon-account:before{ content: '\f007 '; }
-.icon-address:before{ content: '\f041'; }
+.button.icon-cart:before,span.icon-cart:before,a.icon-cart:before,li.icon-cart > a:before{ content: '\f07a'; }
+.button.icon-account:before,span.icon-account:before,a.icon-account:before,li.icon-account > a:before{ content: '\f007'; }
+.button.icon-address:before,span.icon-address:before,a.icon-address:before,li.icon-address > a:before{ content: '\f041'; }
+.button.icon-email:before,span.icon-email:before,a.icon-email:before,li.icon-email > a:before{ content: '\f003'; }
+.button.icon-telephone:before,span.icon-telephone:before,a.icon-telephone:before,li.icon-telephone > a:before{ content: '\f10b'; }
+.button.icon-whatsapp:before,span.icon-whatsapp:before,a.icon-whatsapp:before,li.icon-whatsapp > a:before{ content: '\f232'; }
+.button.icon-telegram:before,span.icon-telegram:before,a.icon-telegram:before,li.icon-telegram > a:before{ content: '\f2c6'; }
+.button.icon-facebook:before,span.icon-facebook:before,a.icon-facebook:before,li.icon-facebook > a:before{ content: '\f09a'; }
+.button.icon-twitter:before,span.icon-twitter:before,a.icon-twitter:before,li.icon-twitter > a:before{ content: '\f099'; }
+.button.icon-google:before,span.icon-google:before,a.icon-google:before,li.icon-google > a:before{ content: '\f0d5'; }
+.button.icon-youtube:before,span.icon-youtube:before,a.icon-youtube:before,li.icon-youtube > a:before{ content: '\f16a'; }
+.button.icon-pinterest:before,span.icon-pinterest:before,a.icon-pinterest:before,li.icon-pinterest > a:before{ content: '\f0d2'; }
+.button.icon-linkedin:before,span.icon-linkedin:before,a.icon-linkedin:before,li.icon-linkedin > a:before{ content: '\f0e1'; }
+.button.icon-instagram:before,span.icon-instagram:before,a.icon-instagram:before,li.icon-instagram > a:before{ content: '\f16d'; }
+.button.icon-tumblr:before,span.icon-tumblr:before,a.icon-tumblr:before,li.icon-tumblr > a:before{ content: '\f174'; }
+
+//listas de menús en general
+ul.menu,ul.nav-menu{
+    li.menu-item.inline{
+        display: inline-block;
+        vertical-align: top;
+    }
+    li.menu-item.inline:not(:first-child){ margin-left: @margin-tn; }
+}
+
 .widget ul{
     list-style-type: none;
     margin: 0;

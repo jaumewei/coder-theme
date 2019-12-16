@@ -13,59 +13,60 @@
         clear: both;
     }
     #site-header{
-        background-color: @color-dark;
+        background-color: @color-white;
         color: @color-clear;
         //margin-bottom: @margin-md;
-        ul{
+        ul.menu,ul.nav-menu{
             list-style-type: none;
             margin: 0; padding: 0;
+            li.menu-item{
+                a{
+                    display: block;
+                }
+            }
         }
-        a{ color: @color-clear; }
-        a:hover,a:active{ color: @color-white; }
+        ul.menu > .menu-item,ul.nav-menu > .menu-item{ display: inline-block; vertical-align: top; }
         //barra superior
         .top-bar.container{
-            background-color: @color-black;
+            background-color: @color-theme;
             padding: @padding-tn 0;
-            .nav-menu-wrapper,.widget-area{
+            font-size: 15px;
+            a{ color: @color-clear; }
+            .icon:before{ color: @color-clear; }
+            a:hover,a:active{ color: @color-white; }
+            .nav-menu.container,.widget-area{
                 display: inline-block;
                 vertical-align: top;
             }
-            ul.menu, ul.nav-menu{
+            ul.menu, .nav-menu.container{
                 li.menu-item{
-                    display: inline-block;
                     margin: 0 @margin-tn 0 0;
-                    a{
-                        color: @color-clear;
-                    }
+                    a{ color: @color-clear; padding: 0 @padding-tn; }
                 }
                 li.menu-item:last-child{ margin-right: 0; }
             }
-            .nav-menu-wrapper.secondary{ float: right; }
+            //auto alinieadoa la izquierda
+            .nav-menu.container:not(:first-child){ float: right; }
             .widget-area.top-bar{
                 .widget{
                     display: inline-block;
                     vertical-align: top;
                     margin: 0 @margin-tn 0 0;
-                    .widget-title{
-                        margin: 0;
-                    }
+                    .widget-title{ margin: 0; }
                 }
-                .widget:last-child{
-                    margin-right: 0;
-                }
+                .widget:last-child{ margin-right: 0; }
             }
         }
         //cabecera principal
         .header-main.container{
-            ul.nav-menu > .menu-item ,ul.menu > li.menu-item{
+            a{ color: @color-theme; }
+            a:hover,a:active{ color: @color-theme-alt; }
+            .nav-menu.container > .menu-item ,ul.menu > li.menu-item{
                 display: inline-block;
                 vertical-align: top;
-                margin: 0 0 0 @margin-sm;
-                a{
-                    display: block;
-                }
+                //margin: 0 0 0 @margin-sm;
             }
-            .site-logo.container, .nav-menu-wrapper.main{
+            .site-logo.container, .nav-menu.container{
                 @media only screen and (min-width: 781px){
                     display: inline-block;
                     vertical-align: top;
@@ -113,33 +114,31 @@
                 }
                 .widget:not(:first-child){ margin-left: @margin-sm; }
             }
-            .nav-menu-wrapper.main{
-                width: 60%;
-                padding: 55px 0 0;
+            .nav-menu.container{
+                @media only screen and (min-width: 781px){
+                    padding: 55px 0 0;
+                    text-align: right;
+                    width: 60%;
+                }
                 @media only screen and (max-width: 780px){
                     display: none;
                 }
-                ul.nav-menu{
-                    float: right;
-                    li.menu-item{
-                        a{
-                            text-transform: uppercase;
-                            letter-spacing: 1px;
-                            font-size: 13px;
-                            font-weight: 700;
-                        }
-                    }
-                    li.menu-item-has-children{
-                        ul.sub-menu{
-                            display: none;
-                        }
+                li.menu-item{
+                    a{
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        font-size: 13px;
+                        font-weight: 700;
                     }
                 }
-                ul.nav-menu > li.menu-item > a{
-                    padding: @padding-tn;
+                li.menu-item-has-children{
+                    ul.sub-menu{
+                    }
                 }
             }
-            .nav-menu-wrapper.main:after{
+            .nav-menu.container > li.menu-item > a{ padding: @padding-tn @padding-sm; }
+            .nav-menu.container > li.menu-item:last-child > a{ padding-right: 0; }
+            .nav-menu.container:after{
                 content: '';
                 clear: both;
                 display: block;
@@ -147,10 +146,10 @@
         }
     }
     #site-content{
-        
+        //contenido
     }
     #site-footer{
-        background-color: @color-dark;
+        background-color: @color-theme;
         color: @color-white;
         letter-spacing: 1px;
         a,h1,h2,h3,h4,h5,h6{ color: @color-white; }
@@ -169,9 +168,7 @@
                         margin: 0 0 @margin-sm;
                     }
                     ul.menu{
-                        li.menu-item{
-                            margin: 0 0 @margin-sm;
-                        }
+                        li.menu-item:not(.inline){ margin: 0 0 @margin-sm; }
                     }
                     .textwidget{
                         p{
@@ -183,25 +180,23 @@
             .widget-area:last-child{ margin-right: 0; }
         }
         .footer-bar{
-            border-top: 1px solid @color-shade;
+            border-top: 1px solid @color-white;
             font-size: 13px;
             ul,ol{
                 list-style-type: none;
                 li{ display: inline-block; vertical-align: top; }
                 li:not(:last-child){ margin-right: @margin-tn; }
             }
-            .nav-menu-wrapper , .widget-area{
+            .nav-menu.container , .widget-area{
                 display: inline-block;
                 vertical-align: top;
                 width: 50%;
                 float: left;
             }
-            .nav-menu-wrapper{
-                ul.nav-menu{
-                    li.menu-item > a{
-                        padding: @padding-tn 0;
-                        display: block;
-                    }
+            .nav-menu.container{
+                li.menu-item > a{
+                    padding: @padding-tn 0;
+                    display: block;
                 }
             }
             .widget-area{

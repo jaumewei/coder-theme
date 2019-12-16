@@ -13,7 +13,7 @@
             <div class="wrap clearfix">
                 <div class="container post-image">
                     <a class="link" href="<?php echo get_permalink(get_the_ID()); ?>">
-                        <?php print poly_thememan_image( get_the_ID() , 'medium' ); ?>
+                        <?php print coders_thememan_image( get_the_ID() , 'medium' ); ?>
                     </a>
                 </div>
                 <div class="container post-content">
