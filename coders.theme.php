@@ -108,14 +108,22 @@ final class CodersTheme extends \CODERS\Theme{
      * Muestra la ficha de producto woocommrece
      * @param int $product_id
      */
-    public static final function product( $product_id = 0 ){
-        
-        if( $product_id === 0 ){
-            $product_id = get_the_ID();
+    /*protected final function registerThemeSetup() {
+
+        if( !function_exists('coders_woocommerce_page')){
+            
+            function coders_woocommerce_page( $product_id = 0 ){
+
+                if( $product_id === 0 ){
+                    $product_id = get_the_ID();
+                }
+
+                print class_exists('WC_Shortcodes') ?  WC_Shortcodes::product_page( array('id'=> $product_id ) ) : '';
+            }
         }
         
-        print class_exists('WC_Shortcodes') ?  WC_Shortcodes::product_page( array('id'=> $product_id ) ) : '';
-    }
+        return parent::registerThemeSetup();
+    }*/
 }
 
 
